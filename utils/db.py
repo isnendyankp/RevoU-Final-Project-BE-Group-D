@@ -1,21 +1,22 @@
 from flask_sqlalchemy import SQLAlchemy
-import os
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import scoped_session, sessionmaker
+import os
 
 # Creating a SQLAlchemy db object without direct initialization
 db = SQLAlchemy()
 
-DATABASE_TYPE = os.getenv("DATABASE_TYPE")
-DATABASE_USERNAME = os.getenv("DATABASE_USERNAME")
-DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
-DATABASE_HOST = os.getenv("DATABASE_HOST")
-DATABASE_PORT = os.getenv("DATABASE_PORT")
-DATABASE_NAME = os.getenv("DATABASE_NAME")
-DATABASE_URI = os.getenv('DATABASE_URI')
+# DATABASE_TYPE = os.getenv("DATABASE_TYPE")
+# DATABASE_USERNAME = os.getenv("DATABASE_USERNAME")
+# DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
+# DATABASE_HOST = os.getenv("DATABASE_HOST")
+# DATABASE_PORT = os.getenv("DATABASE_PORT")
+# DATABASE_NAME = os.getenv("DATABASE_NAME")
+# DATABASE_URI = os.getenv('DATABASE_URI')
 
-engine = create_engine(DATABASE_URI)
+# engine = create_engine(DATABASE_URI)
+engine = create_engine('mysql+pymysql://root:0000@localhost:3306/purewater')
 Session = scoped_session(sessionmaker(bind=engine))
 
 def init_db(app):

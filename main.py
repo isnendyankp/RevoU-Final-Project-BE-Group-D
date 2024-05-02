@@ -1,7 +1,7 @@
 from flask import Flask
 from dotenv import load_dotenv
 from utils.db import init_db
-from controllers.user_management_route import user_route
+from controllers.user_management_route import user_routes
 import os
 
 # Create the application instance
@@ -17,7 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 init_db(app)
 
 #  Registering blueprints
-app.register_blueprint(user_route)
+app.register_blueprint(user_routes)
 
 @app.route('/')
 def hello_world():
