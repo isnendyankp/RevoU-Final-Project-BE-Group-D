@@ -1,9 +1,11 @@
+import pymysql
+pymysql.install_as_MySQLdb()
+
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import scoped_session, sessionmaker
 import os
-
 # Creating a SQLAlchemy db object without direct initialization
 db = SQLAlchemy()
 
@@ -16,7 +18,7 @@ db = SQLAlchemy()
 # DATABASE_URI = os.getenv('DATABASE_URI')
 
 # engine = create_engine(DATABASE_URI)
-engine = create_engine('mysql+pymysql://root:0000@localhost:3306/purewater')
+engine = create_engine('mysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway')
 Session = scoped_session(sessionmaker(bind=engine))
 
 def init_db(app):
