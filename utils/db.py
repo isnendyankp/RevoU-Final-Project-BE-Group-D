@@ -18,7 +18,7 @@ DATABASE_NAME = os.getenv("DATABASE_NAME")
 # DATABASE_URI = os.getenv('DATABASE_URI')
 
 # engine = create_engine(DATABASE_URI)
-engine = create_engine('mysql+mysqlconnector://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway')
+engine = create_engine('mysql+pymysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway')
 Session = scoped_session(sessionmaker(bind=engine))
 
 def init_db(app):
