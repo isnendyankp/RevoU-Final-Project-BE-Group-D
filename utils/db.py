@@ -9,16 +9,16 @@ import os
 # Creating a SQLAlchemy db object without direct initialization
 db = SQLAlchemy()
 
-# DATABASE_TYPE = os.getenv("DATABASE_TYPE")
-# DATABASE_USERNAME = os.getenv("DATABASE_USERNAME")
-# DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
-# DATABASE_HOST = os.getenv("DATABASE_HOST")
-# DATABASE_PORT = os.getenv("DATABASE_PORT")
-# DATABASE_NAME = os.getenv("DATABASE_NAME")
-# DATABASE_URI = os.getenv('DATABASE_URI')
+DATABASE_TYPE = os.getenv("DATABASE_TYPE")
+DATABASE_USERNAME = os.getenv("DATABASE_USERNAME")
+DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
+DATABASE_HOST = os.getenv("DATABASE_HOST")
+DATABASE_PORT = os.getenv("DATABASE_PORT")
+DATABASE_NAME = os.getenv("DATABASE_NAME")
+DATABASE_URI = os.getenv('DATABASE_URI')
 
-# engine = create_engine(DATABASE_URI)
-engine = create_engine('mysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway')
+engine = create_engine(DATABASE_URI)
+# engine = create_engine('mysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway')
 Session = scoped_session(sessionmaker(bind=engine))
 
 def init_db(app):
