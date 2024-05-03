@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask
 from flask_jwt_extended import JWTManager
 from utils.db import init_db
 from controllers.user_management_route import user_routes
