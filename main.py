@@ -7,6 +7,7 @@ import os
 from flask_cors import CORS
 
 
+
 # Create the application instance
 app = Flask(__name__)
 
@@ -17,8 +18,9 @@ load_dotenv()
 
 # # Setting database URI directly
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway"
-
+# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway"
+# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:sIIuleUkiLAJrevYkifWmimSGVZJLrCj@roundhouse.proxy.rlwy.net:49795/purewater"
 # Initializing database
 init_db(app)
 
