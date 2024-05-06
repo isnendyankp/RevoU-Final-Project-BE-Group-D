@@ -15,9 +15,9 @@ CORS(app)
 # Load the Configurations
 load_dotenv()
 
-# Setting database URI directly
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
-# app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway"
+# # Setting database URI directly
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway"
 
 # Initializing database
 init_db(app)
