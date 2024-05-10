@@ -21,6 +21,7 @@ DATABASE_NAME = os.getenv("DATABASE_NAME")
 engine = create_engine('mysql+pymysql://root:RwpRYvCgwTIqjgoUQDPBMnCVpPLxudri@roundhouse.proxy.rlwy.net:47006/railway')
 Session = scoped_session(sessionmaker(bind=engine))
 
+# Function to initialize the database
 def init_db(app):
     try:
         db.init_app(app)
